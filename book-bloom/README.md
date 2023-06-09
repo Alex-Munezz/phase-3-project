@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Book-Bloom
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Book-Bloom Application is a web-based application that allows users to manage books, users, purchases, and reviews. It provides a RESTful API built with FastAPI and a SQLite database for data storage. The application supports CRUD operations (Create, Read, Update, Delete) for books, users, purchases, and reviews.
+The link to the backend is this :  https://github.com/Alex-Munezz/phase-3-project-backend
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- User Management: Create, retrieve, update, and delete user information.
+- Book Management: Add, retrieve, update, and delete book details.
+- Purchase Management: Track and manage user purchases.
+- Review Management: Allow users to submit and retrieve book reviews.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```bash
+   git clone https://github.com/your-username/book-application.git
+   cd book-application
+Create a virtual environment and activate it:
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create the database tables:
 
-### `npm run build`
+bash
+Copy code
+python create_tables.py
+Run the application:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+Copy code
+uvicorn app:app --reload
+The API will be available at http://localhost:8000.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+API Endpoints
+The application provides the following API endpoints:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+GET /users: Retrieve all users.
 
-### `npm run eject`
+POST /users: Create a new user.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+GET /users/{user_id}: Retrieve user details by ID.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+PUT /users/{user_id}: Update user details by ID.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+DELETE /users/{user_id}: Delete a user by ID.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+GET /books: Retrieve all books.
 
-## Learn More
+POST /books: Add a new book.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+GET /books/{book_id}: Retrieve book details by ID.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+PUT /books/{book_id}: Update book details by ID.
 
-### Code Splitting
+DELETE /books/{book_id}: Delete a book by ID.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+GET /purchases: Retrieve all purchases.
 
-### Analyzing the Bundle Size
+POST /purchases: Create a new purchase.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+GET /purchases/{purchase_id}: Retrieve purchase details by ID.
 
-### Making a Progressive Web App
+PUT /purchases/{purchase_id}: Update purchase details by ID.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+DELETE /purchases/{purchase_id}: Delete a purchase by ID.
 
-### Advanced Configuration
+GET /reviews: Retrieve all reviews.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+POST /reviews: Create a new review.
 
-### Deployment
+GET /reviews/{review_id}: Retrieve review details by ID.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+PUT /reviews/{review_id}: Update review details by ID.
 
-### `npm run build` fails to minify
+DELETE /reviews/{review_id}: Delete a review by ID.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Note: Replace {user_id}, {book_id}, {purchase_id}, and {review_id} with the corresponding resource ID in the API endpoints.
+
+Documentation
+The application uses FastAPI's built-in documentation feature. You can access the API documentation by visiting http://localhost:8000/docs in your browser.
+
+Contributing
+Contributions are welcome! If you find any issues or want to add new features, feel free to open an issue or submit a pull request.
+
+License
+This project is licensed under the MIT License.
+
+Feel free to customize the content based on your specific application and require
